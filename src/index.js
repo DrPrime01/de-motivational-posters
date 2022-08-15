@@ -7,21 +7,21 @@ function AllPoster({demotivationText}) {
   return (
     <div className='all-poster'>
       <div className='demo-text'>{demotivationText}</div>
-      <Poster poster = {posterOne} />
-      <Poster poster = {posterTwo} />
-      <Poster poster = {posterThree} />
+      <Poster poster = {posterOne} colour = "one" titleColor="title-one title"/>
+      <Poster poster = {posterTwo} colour = "two" titleColor="title-two title"/>
+      <Poster poster = {posterThree} colour = "three" titleColor="title-three title"/>
     </div>
   )
 }
 
-function Poster({poster}) {
+function Poster({poster, colour, titleColor}) {
   const {image, title, text} = poster
   return (
     <div className='container'>
       <div className='image'>
-        <img src = {image} alt= "demotivation" className="img"/>
+        <img src = {image} alt= "demotivation" className={colour}/>
       </div>
-      <h1 className='title'>{title}</h1>
+      <h1 className={titleColor}>{title}</h1>
       <h3 className='text'>{text}</h3>
     </div>
   )
